@@ -1,5 +1,5 @@
 #
-# Copyright 2008 Free Software Foundation, Inc.
+# Copyright 2008, 2009 Free Software Foundation, Inc.
 #
 # This software is distributed under the terms of the GNU Public License.
 # See the COPYING file in the main directory for details.
@@ -20,42 +20,24 @@
 
 include $(top_srcdir)/Makefile.common
 
-AM_CPPFLAGS = $(STD_DEFINES_AND_INCLUDES) $(USB_INCLUDES) $(WITH_INCLUDES)
-AM_CXXFLAGS = -Wall -pthread -ldl
-#AM_CXXFLAGS = -Wall -O2 -NDEBUG -pthread -ldl
-#AM_CFLAGS = -Wall -O2 -NDEBUG -pthread -ldl
+AM_CPPFLAGS = $(STD_DEFINES_AND_INCLUDES)
+AM_CXXFLAGS = -Wall -ldl -pthread
 
-# Order must be preserved
-SUBDIRS = \
-	config \
-	AsteriskConfig \
-	sqlite3 \
-	CommonLibs \
-	GPRS \
-	Globals \
-	SR \
-	CLI \
-	SIP \
-	GSM \
-	SMS \
-	TransceiverRAD1 \
-	Transceiver52M \
-	TRXManager \
-	Control \
-	apps \
-	doc \
-	tools
+noinst_LTLIBRARIES = libgprs.la
 
-EXTRA_DIST = \
-	autogen.sh \
-	Transceiver52M \
-	INSTALLATION \
-	LEGAL \
-	COPYING \
-	README
+libgprs_la_SOURCES = \
+	csn1.cpp \
+	gsm_rlcmac.cpp
+
+noinst_PROGRAMS = \
+	RLCMACTest
+
+noinst_HEADERS = \
+	csn1.h \
+	gsm_rlcmac.h
+
+RLCMACTest_SOURCES = RLCMACTest.cpp
+RLCMACTest_LDADD = $(COMMON_LA) 
+#MOSTLYCLEANFILES += testSource testDestination
 
 
-dox: FORCE
-	doxygen doxconfig
-
-FORCE:
