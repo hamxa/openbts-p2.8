@@ -740,7 +740,6 @@ void PDTCHL1Decoder::handleGoodFrame()
 {
 	RLCMACFrame* frame = new RLCMACFrame(mD);
 	mFramesQ.write(frame);
-	XCCHL1Decoder::handleGoodFrame();
 }
 
 
