@@ -31,7 +31,6 @@ SUBDIRS = \
 	AsteriskConfig \
 	sqlite3 \
 	CommonLibs \
-	GPRS \
 	Globals \
 	SR \
 	CLI \
