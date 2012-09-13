@@ -132,7 +132,6 @@ AC_CONFIG_FILES([\
     tools/Makefile \
     AsteriskConfig/Makefile \
     CommonLibs/Makefile \
-    GPRS/Makefile \
     Globals/Makefile \
     Control/Makefile \
     GSM/Makefile \
