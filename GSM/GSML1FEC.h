@@ -660,6 +660,7 @@ class PDTCHL1Decoder : public XCCHL1Decoder {
 
 	/** Override open() to set physical parameters with reasonable defaults. */
 	void open();
+	void close(bool hardRelease=false);
 
 	/**
 		Override processBurst to catch the physical parameters.
