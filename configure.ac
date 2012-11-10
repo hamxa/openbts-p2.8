@@ -57,6 +57,9 @@ AC_TYPE_SIZE_T
 AC_HEADER_TIME
 AC_C_BIGENDIAN
 
+# Defines SQLITE3_CFLAGS and SQLITE3_LIBS
+PKG_CHECK_MODULES(SQLITE3, sqlite3 > 3.6)
+
 AC_ARG_WITH(usrp1, [
     AS_HELP_STRING([--with-usrp1],
         [enable USRP1 gnuradio based transceiver])

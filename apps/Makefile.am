@@ -39,7 +39,7 @@ OpenBTS_LDADD = \
 	$(CONTROL_LA) \
 	$(SR_LA) \
 	$(COMMON_LA) \
-	$(SQLITE_LA) \
+	$(SQLITE3_LIBS) \
 	$(SMS_LA) \
 	$(OSIP_LIBS) \
 	$(ORTP_LIBS)

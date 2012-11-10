@@ -29,7 +29,6 @@ AM_CXXFLAGS = -Wall -pthread -ldl
 _SUBDIRS = \
 	config \
 	AsteriskConfig \
-	sqlite3 \
 	CommonLibs \
 	Globals \
 	SR \

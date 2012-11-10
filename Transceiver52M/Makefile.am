@@ -86,19 +86,19 @@ noinst_HEADERS = \
 USRPping_SOURCES = USRPping.cpp
 USRPping_LDADD = \
 	libtransceiver.la \
-	$(COMMON_LA) $(SQLITE_LA)
+	$(COMMON_LA) $(SQLITE3_LIBS)
 
 transceiver_SOURCES = runTransceiver.cpp
 transceiver_LDADD = \
 	libtransceiver.la \
 	$(GSM_LA) \
-	$(COMMON_LA) $(SQLITE_LA)
+	$(COMMON_LA) $(SQLITE3_LIBS)
 
 sigProcLibTest_SOURCES = sigProcLibTest.cpp
 sigProcLibTest_LDADD = \
 	libtransceiver.la \
 	$(GSM_LA) \
-	$(COMMON_LA) $(SQLITE_LA)
+	$(COMMON_LA) $(SQLITE3_LIBS)
 
 #uhd wins
 if UHD

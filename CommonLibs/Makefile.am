@@ -88,13 +88,13 @@ RegexpTest_SOURCES = RegexpTest.cpp
 RegexpTest_LDADD = libcommon.la
 
 ConfigurationTest_SOURCES = ConfigurationTest.cpp
-ConfigurationTest_LDADD = libcommon.la 	$(SQLITE_LA)
+ConfigurationTest_LDADD = libcommon.la $(SQLITE3_LIBS)
 
 #ReportingTest_SOURCES = ReportingTest.cpp
 #ReportingTest_LDADD = libcommon.la $(SQLITE_LA)
 
 LogTest_SOURCES = LogTest.cpp
-LogTest_LDADD = libcommon.la $(SQLITE_LA)
+LogTest_LDADD = libcommon.la $(SQLITE3_LIBS)
 
 F16Test_SOURCES = F16Test.cpp
 

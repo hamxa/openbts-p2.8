@@ -72,35 +72,35 @@ noinst_HEADERS = \
 RAD1ping_SOURCES = RAD1ping.cpp
 RAD1ping_LDADD = \
 	libtransceiver.la \
-	$(COMMON_LA) $(SQLITE_LA) 
+	$(COMMON_LA) $(SQLITE3_LIBS)
 
 RAD1RxRawPower_SOURCES = RAD1RxRawPower.cpp
 RAD1RxRawPower_LDADD = \
         libtransceiver.la \
-        $(COMMON_LA) $(SQLITE_LA)
+        $(COMMON_LA) $(SQLITE3_LIBS)
 
 RAD1Cmd_SOURCES = RAD1Cmd.cpp
 RAD1Cmd_LDADD = \
         libtransceiver.la \
-        $(COMMON_LA) $(SQLITE_LA)
+        $(COMMON_LA) $(SQLITE3_LIBS)
 
 RAD1SN_SOURCES = RAD1SN.cpp
 RAD1SN_LDADD = \
         libtransceiver.la \
-        $(COMMON_LA) $(SQLITE_LA)
+        $(COMMON_LA) $(SQLITE3_LIBS)
 
 
 transceiver_SOURCES = runTransceiver.cpp
 transceiver_LDADD = \
 	libtransceiver.la \
 	$(GSM_LA) \
-	$(COMMON_LA) $(SQLITE_LA) 
+	$(COMMON_LA) $(SQLITE3_LIBS)
 
 sigProcLibTest_SOURCES = sigProcLibTest.cpp
 sigProcLibTest_LDADD = \
 	libtransceiver.la \
 	$(GSM_LA) \
-	$(COMMON_LA) $(SQLITE_LA)
+	$(COMMON_LA) $(SQLITE3_LIBS)
 
 
 
