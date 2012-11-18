@@ -20,6 +20,7 @@
  */
 
 #include "radioDevice.h"
+#include "radioInterface.h"
 #include "Threads.h"
 #include "Logger.h"
 #include <uhd/version.hpp>
@@ -54,8 +55,12 @@ const float tx_ampl = .3;
 
 #ifdef RESAMPLE
 const double rx_smpl_offset = .00005;
+#elif (SAMPSPERSYM == 1)
+const double rx_smpl_offset = 9.4457e-5;
+#elif (SAMPSPERSYM == 4)
+const double rx_smpl_offset = 9.4457e-5 - 0.000060583;
 #else
-const double rx_smpl_offset = 9.4457e-5; 
+#error You have to measure rx_smpl_offset for this case
 #endif
 
 static TIMESTAMP init_rd_ts = 0;
