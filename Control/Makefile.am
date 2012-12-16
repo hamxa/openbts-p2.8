@@ -29,6 +29,8 @@ EXTRA_DIST = README.Control
 
 noinst_LTLIBRARIES = libcontrol.la
 
+noinst_PROGRAMS = TMSITableTest
+
 libcontrol_la_SOURCES = \
 	TransactionTable.cpp \
 	TMSITable.cpp \
@@ -51,3 +53,6 @@ noinst_HEADERS = \
 	CallControl.h \
 	TMSITable.h \
 	RRLPServer.h
+
+TMSITableTest_SOURCES = TMSITableTest.cpp
+TMSITableTest_LDADD = $(CONTROL_LA) $(GSM_LA) $(COMMON_LA) $(SQLITE3_LIBS)
