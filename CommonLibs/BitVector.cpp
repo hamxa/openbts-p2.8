@@ -72,7 +72,9 @@ uint64_t BitVector::peekField(size_t readIndex, unsigned length) const
 {
 	uint64_t accum = 0;
 	char *dp = mStart + readIndex;
-	assert(dp+length <= mEnd);
+	// Return some sane value in case of error and let upper layers
+	// of message parsing to handle the error.
+	if (dp+length > mEnd) return 0;
 	for (unsigned i=0; i<length; i++) {
 		accum = (accum<<1) | ((*dp++) & 0x01);
 	}
@@ -86,7 +88,9 @@ uint64_t BitVector::peekFieldReversed(size_t readIndex, unsigned length) const
 {
 	uint64_t accum = 0;
 	char *dp = mStart + readIndex + length - 1;
-	assert(dp<mEnd);
+	// Return some sane value in case of error and let upper layers
+	// of message parsing to handle the error.
+	if (dp >= mEnd) return 0;
 	for (int i=(length-1); i>=0; i--) {
 		accum = (accum<<1) | ((*dp--) & 0x01);
 	}
