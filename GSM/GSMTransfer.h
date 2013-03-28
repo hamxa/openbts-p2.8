@@ -650,6 +650,8 @@ std::ostream& operator<<(std::ostream& os, const L3Frame&);
 
 typedef InterthreadQueue<L3Frame> L3FrameFIFO;
 
+typedef InterthreadQueueWithWait<L3Frame> L3CCCHFrameFIFO;
+
 
 
 /** A vocoder frame for use in GSM/SIP contexts. */

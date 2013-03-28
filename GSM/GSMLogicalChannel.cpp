@@ -124,7 +124,7 @@ void CCCHLogicalChannel::serviceLoop()
 	LogicalChannel::send(idleFrame);
 	// run the loop
 	while (true) {
-		L3Frame* frame = mQ.read();
+		L3Frame* frame = mQ.readNoBlock();
 		if (frame) {
 			LogicalChannel::send(*frame);
 			OBJLOG(DEBUG) << "CCCHLogicalChannel::serviceLoop sending " << *frame;

@@ -422,7 +422,7 @@ class CCCHLogicalChannel : public NDCCHLogicalChannel {
 	*/
 
 	Thread mServiceThread;	///< a thread for the service loop
-	L3FrameFIFO mQ;			///< because the CCCH is written by multiple threads
+	L3CCCHFrameFIFO mQ;			///< because the CCCH is written by multiple threads
 	bool mRunning;			///< a flag to indication that the service loop is running
 
 	public:
